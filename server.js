@@ -3,12 +3,16 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
+
 const app = express();
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
+const usersRoutes = require("./routes/userRoutes");
+const emplyeesRoutes = require("./routes/employeeRoutes");
+
 const DB_URL =
-  "mongodb+srv://Walker_admin:mypassword@cluster0.ij2nvg9.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://Walker_admin:mypassword@cluster0.ij2nvg9.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority";
 
 //  CONNECTING TO DATABASE
 mongoose
@@ -24,7 +28,8 @@ mongoose
     process.exit();
   });
 
-
+app.use("/api/user/", usersRoutes);
+app.use("/api/emp/", emplyeesRoutes);
 
 app.get("/", (req, res) => {
   res.send("<h1>welcome to assigment 1 main page</h1>");
