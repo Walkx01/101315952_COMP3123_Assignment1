@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-
 const app = express();
+const port = process.env.PORT || 7000;
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
@@ -35,6 +35,6 @@ app.get("/", (req, res) => {
   res.send("<h1>welcome to assigment 1 main page</h1>");
 });
 
-app.listen(7000, (req, res) => {
+app.listen(port, (req, res) => {
   console.log("server listening on  port 7000");
 });
