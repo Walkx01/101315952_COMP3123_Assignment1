@@ -18,5 +18,6 @@
       "src": "server.js",
       "use": "@now/node"
     }
-  ]
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
