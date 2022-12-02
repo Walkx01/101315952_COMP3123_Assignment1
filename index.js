@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-
 const app = express();
 const port = process.env.PORT || 7000;
 app.use(bodyParser.urlencoded());
@@ -29,7 +28,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Successfully connected to the database mongoDB Atlas Server");
+    console.log("Successfully connected to the database mongoDB Atlas index");
   })
   .catch((err) => {
     console.log("Could not connect to the database. Exiting now...", err);

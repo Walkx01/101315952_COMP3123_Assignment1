@@ -8,14 +8,12 @@
 npm install
 ```
 
-2. Run Server
+2. Run index
 
 ```bash
-node server.js
+node index.js
 ```
 
 You can browse the apis at <http://localhost:7000>
 
 ## Instruction
-
-
