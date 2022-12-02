@@ -19,6 +19,7 @@ const usersRoutes = require("./routes/userRoutes");
 const emplyeesRoutes = require("./routes/employeeRoutes");
 
 const DB_URL =
+  process.env.MONGODB_URI ||
   "mongodb+srv://Walker_admin:mypassword@cluster0.ij2nvg9.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority";
 
 //  CONNECTING TO DATABASE
