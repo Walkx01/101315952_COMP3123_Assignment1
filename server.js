@@ -8,6 +8,15 @@ const port = process.env.PORT || 7000;
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
+var cors = require("cors");
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+); // Use this after the variable declaration
+
 const usersRoutes = require("./routes/userRoutes");
 const emplyeesRoutes = require("./routes/employeeRoutes");
 
