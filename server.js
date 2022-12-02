@@ -9,7 +9,8 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 var cors = require("cors");
-app.use(cors()); // Use this after the variable declaration
+
+app.use(cors({ origin: "*" })); // Use this after the variable declaration
 
 const usersRoutes = require("./routes/userRoutes");
 const emplyeesRoutes = require("./routes/employeeRoutes");
