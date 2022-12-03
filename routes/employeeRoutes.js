@@ -53,7 +53,9 @@ app.put("/employees/:eid", async (req, res) => {
       req.body
     );
     if (employee) res.status(200).send("successfuly updated ");
-    res.status(201).send("employee id not found");
+    else {
+      res.status(201).send("employee id not found");
+    }
   } catch (error) {
     res.status(400).send(error);
   }
@@ -73,7 +75,9 @@ app.delete("/employees/:eid", async (req, res) => {
             employee.last_name +
             " successfuly deleted "
         );
-    res.status(204).send("employee id not found");
+    else {
+      res.status(204).send("employee id not found");
+    }
   } catch (error) {
     res.status(400).send(error);
   }
