@@ -11,7 +11,6 @@ const bcrypt = require("bcryptjs");
 "password":"mypassword"
 }*/
 app.post("/signup", async (req, res) => {
-  // res.send("welcome to signup page");
   try {
     const newUser = new userModel(req.body);
     const user = await newUser.save();

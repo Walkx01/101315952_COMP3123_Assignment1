@@ -37,7 +37,9 @@ app.get("/employees/:eid", async (req, res) => {
   try {
     const employee = await employeeModel.findById(req.params.eid);
     if (employee) res.status(200).send(employee);
-    res.status(201).send("employee id not found");
+    else {
+      res.status(201).send("employee id not found");
+    }
   } catch (error) {
     res.status(400).send(error);
   }
