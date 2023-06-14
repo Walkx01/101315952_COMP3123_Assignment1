@@ -3,8 +3,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const app = express();
-const port = process.env.PORT || 7000;
-app.use(bodyParser.urlencoded());
+const port = process.env.PORT || 3000;
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(bodyParser.json());
 
 var cors = require("cors");
@@ -20,7 +21,7 @@ const emplyeesRoutes = require("./routes/employeeRoutes");
 
 const DB_URL =
   process.env.MONGODB_URI ||
-  "mongodb+srv://Walker_admin:mypassword@cluster0.ij2nvg9.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority";
+  "mongodb+srv://Walker_admin:Helloworld101@cluster0.ij2nvg9.mongodb.net/comp3123_assigment1?retryWrites=true&w=majority";
 
 //  CONNECTING TO DATABASE
 mongoose
@@ -44,5 +45,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, (req, res) => {
-  console.log("server listening on  port 7000");
+  console.log("server listening on  port 3000");
 });
